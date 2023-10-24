@@ -7,11 +7,10 @@
   <title></title>Precision CNC Milling, Turning, and Laser Cutting Services | RoughEdge Machineworks</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Full screen container */
     body {
       font-family: 'Roboto', sans-serif;
       color: black;
-      overflow: hidden;
+      overflow: auto;
     }
     a {
       color: black;
@@ -22,14 +21,21 @@
       align-items: center;
       height: 90vh;
       margin: 0;
+      flex-direction: column;
+    }
+    .content-box {
+      max-width: 600px;
+      width: 100%;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Image -->
-    <center>
-      <p></p><img src="https://www.roughedge.se/logo_sticker.png" width="530" height="530" alt="Roughedge Machineworks Logo"></p>
+      <img src="https://www.roughedge.se/logo_sticker.png" width="530" height="530" alt="Roughedge Machineworks Logo"></p>
+      <div class="content-box">
       <h1>Kontakta oss</h1>
       <p></p><a href="mailto:hej@roughedge.se">hej@roughedge.se</a><br />Tel: 0702457803</p>
       <h2>CNC Fräsning</h2>
@@ -41,7 +47,7 @@
       <p>Utför lågvolyms laserskärning i ovan nämnda material, 1 till 100 komponenter - för större serier rekommenderar vi att söka sig till verkstad med högre kapacitet.</p>
       <h2>Svets fabrikation och reperation</h2>
       <p>Svetsning i Aluminium, Rostfritt och Stål - både för nyproduktion och reperations arbete.</p>
-    </center>
+      </div>
   </div>
 </body>
 </html>
