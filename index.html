@@ -6,6 +6,51 @@
   <meta name="keywords" value="CNC milling,CNC turning,Laser cutting,Custom CNC machining,Precision machining,RoughEdge machineworks,Industrial laser cutting,Metal fabrication,Prototype development,CNC machine shop" />
   <title>Precision CNC Milling, Turning, and Laser Cutting Services | RoughEdge Machineworks</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script type="text/javascript">
+    var a = (function() {
+      var shownhide = function(h2) {
+        var item = document.querySelector("."+ h2.id);
+            if([...item.classList].includes("hidden")) {
+              hidesAll();
+              delFades();
+              addFaded(h2.id);
+              item.classList.remove("hidden");
+            } else {
+              hidesAll();
+              delFades();
+              item.classList.add("hidden");
+            }
+      };
+      var addFaded = function(id) {
+        var items = document.querySelectorAll("h2:not(." + id +")");
+        Array.prototype.slice.call(items).forEach(item => {
+          item.classList.add("faded");
+        });
+      };
+      var hidesAll = function() {
+        var items = document.querySelectorAll("div.item");
+        Array.prototype.slice.call(items).forEach(it => {
+          it.classList.add("hidden");
+        });
+      };
+      var delFades = function() {
+        var items = document.querySelectorAll("h2.faded");
+        Array.prototype.slice.call(items).forEach(it => {
+          it.classList.remove("faded");
+        });
+      };
+
+      document.addEventListener("DOMContentLoaded", function() {
+        hidesAll();
+        var h2Elements = document.querySelectorAll("h2");
+        Array.prototype.slice.call(h2Elements).forEach(h2 => {
+          h2.addEventListener("click", function() {
+            shownhide(h2);
+          });
+        });
+      });
+    })();
+  </script>
   <style>
     html { font-size: 100%; }
     div.services { font-size: 90%; }
@@ -23,10 +68,11 @@
     h1 {
         margin-top: 0;
         font-size: 2.2rem;
-        text-align: center; 
+        text-align: center;
     }
-    h2 {font-size: 1.654rem; margin: 0; padding: 0; }
-    h3 {font-size: 1.466rem; margin: 0; padding: 0; }
+    h2 {font-size: 1.654rem; margin: 0; padding: 0; cursor: pointer; margin: 10px 0px; }
+    h3 {font-size: 1.466rem; margin: 0; margin: 10px 0px; }
+    h3:parent { margin: 10px; }
     h4 {font-size: 1.363rem; margin: 0; padding: 0; }
     h5 {font-size: 1.25rem; margin: 0; padding: 0; }
     .container {
@@ -45,6 +91,12 @@
     .center {
       text-align: center !important;
     }
+    .hidden {
+      display: none;
+    }
+    .faded {
+      color: rgba(0,0,0,0.2)
+    }
   </style>
 </head>
 <body>
@@ -56,44 +108,44 @@
       <p>&nbsp;</p>
       <div class="services">
         <h1>Tjänster</h1>
-        <h2>CNC Fräsning</h2>
-        <p>
+        <h2 id="milling">CNC Fräsning</h2>
+        <div class="item milling">
             <h3>Prisvärda Lösningar för Dina Produktionsbehov</h3>
             <p>Vi erbjuder CNC fräsningstjänster för både befintliga och nya komponenter.</p>
             <p>Vårt fokus ligger på lågvolymproduktion, vilket gör att vi kan erbjuda konkurrenskraftiga priser och snabba leveranstider. Oavsett om det handlar om tillverkning av nya delar eller reparation av befintliga komponenter, är vi här för att hjälpa dig att få jobbet gjort utan att tumma på kvaliteten.</p>
-        </p>
-        <h2>CNC Svarvning</h2>
-        <p>
+        </div>
+        <h2 id="turning">CNC Svarvning</h2>
+        <div class="item turning">
             <h3>Förmånliga Lösningar för Lågvolymprojekt</h3>
             <p>Vi erbjuder enklare CNC svarvningstjänster i låg volym, perfekt för både reparationer och produktion.</p>
             <p>Vår tjänst är designad för att vara både kostnadseffektiv och tillförlitlig, så att du kan hålla ditt projekt på spåret utan att överskrida budgeten.</p>
-        </p>
-        <h2>Laserskärning med Precision</h2>
-        <p>
+        </div>
+        <h2 id="laser">CNC Laserskärning</h2>
+        <div class="item laser">
             <h3>Snabb, Effektiv och Tillförlitlig</h3>
             <p>Utforska möjligheterna med vår laserskärningstjänst, utrustad med en 1kW fiberlaser, redo att hantera stål, rostfritt och aluminium med precision.</p>
             <p>Vi specialiserar oss på lågvolymsproduktion, med kapacitet att hantera order om 1 till 100 komponenter, vilket gör oss till ett ekonmiskt val för mindre projekt eller prototyptillverkning.</p>
             <p>Vårt fokus på lågvolymsbeställningar tillåter oss att erbjuda konkurrenskraftiga priser och personlig service, säkerställande att varje komponent skärs med hög precision och kvalitet.</p>
             <p>För större serier rekommenderar vi att söka sig till verkstäder med högre kapacitet. Vi är här för att tjäna dina behov av laserskärning med vår specialiserade utrustning och teknisk kunskap, leverera kvalitetskomponenter som möter dina specifikationer utan att spräcka budgeten.</p>
-        </p>
-        <h2>Svets fabrikation och reperation</h2>
-        <p>
+        </div>
+        <h2 id="weld">Fabrikation</h2>
+        <div class="item weld">
             <h3>Ekonomiskt och Tillförlitligt</h3>
             <p>Vi erbjuder grundläggande svetsningstjänster för aluminium, rostfritt och stål, som passar perfekt för både nyproduktion och reparationsarbeten.</p>
             <p>Vår service är enkel och rakt på sak - vi svetsar dina komponenter enligt dina specifikationer, med fokus på att hålla kostnaderna nere.
-        </p>
-        <h2>CAD/CAM - Fusion360</h2>
-        <p>
+        </div>
+        <h2 id="cad">CAD/CAM</h2>
+        <div class="item cad">
             <h3>Från Skisser till CAD-filer</h3>
             <p>Har du en skiss, ett fotografi eller en pappersritning som behöver omvandlas till en professionell CAD-fil? Vi erbjuder en tjänst där vi tar ditt basmaterial och skapar digitala ritningsunderlag. Detta är en enkel och kostnadseffektiv lösning för att få dina ideer omvandlade till hanterbara digitala filer.</p>
             <p>Du kan välja att ta med dig CAD-filerna och arbeta vidare med dem själv, eller så kan vi ta hand om produktionen åt dig i vår egen verkstad. Vi fokuserar på att göra processen smidig och bekymmersfri, samtidigt som vi erbjuder konkurrenskraftiga priser.</p>
             <p>Vare sig du behöver hjälp med att ta fram CAD-filer eller med att producera komponenterna, är vi här för att assistera dig. Låt oss hjälpa dig att ta ditt projekt från skiss till verklighet med våra enkla och ekonomiska tjänster för framställning av ritningsunderlag.</p>
-        </p>
-        <h2>3D-utskrift för Testning</h2>
-        <p>
+        </div>
+        <h2 id="print">3D-utskrift</h2>
+        <div class="item print">
             <h3>Tag Hem och Testa - Utan Överhängande Kostnader</h3>
             <p>Vi erbjuder dig möjligheten att 3D-printa dina ritningar för att testa passformen eller få en känsla för dimensionerna. Detta är ett kostnadseffektivt sätt att säkerställa att din design fungerar som den ska innan du går vidare med fullskalig produktion. Vare sig du behöver en prototyp för interna tester eller en modell att visa upp för intressenter, är vår 3D-printningstjänst ett praktiskt och ekonomiskt alternativ.</p>
-        </p>
+        </div>
         </div>
       </div>
   </div>
